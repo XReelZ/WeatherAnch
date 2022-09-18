@@ -1,4 +1,5 @@
 export interface IWeather {
+  WeatherID: number;
   Date: Date;
   TemperatureC: number;
   TemperatureF: number;
@@ -6,20 +7,20 @@ export interface IWeather {
 }
 
 export class Weather implements IWeather {
-  ID: number;
+  WeatherID: number;
   Date: Date;
   TemperatureC: number;
   TemperatureF: number;
   Summary: string;
 
   constructor(
-    ID: number,
+    WeatherID: number,
     Date: Date,
     TemperatureC: number,
     TemperatureF: number,
     Summary: string
   ) {
-    this.ID = ID;
+    this.WeatherID = WeatherID;
     this.Date = Date;
     this.TemperatureC = TemperatureC;
     this.TemperatureF = TemperatureF;

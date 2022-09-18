@@ -14,7 +14,7 @@ namespace WeatherForecast.Business.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PostCode = table.Column<int>(type: "int", nullable: false)
+                    PostCode = table.Column<string>(type: "nvarchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {

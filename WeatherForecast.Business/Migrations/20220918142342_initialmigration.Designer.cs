@@ -31,8 +31,8 @@ namespace WeatherForecast.Business.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PostCode")
-                        .HasColumnType("int");
+                    b.Property<string>("PostCode")
+                        .HasColumnType("string");
 
                     b.HasKey("ID");
 

@@ -32,7 +32,7 @@ namespace WeatherForecast.Business.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostCode")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("CityID")
                         .HasName("PK_City");
