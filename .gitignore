@@ -2,7 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/WeatherForecast.Server/WeatherForecast.Server/bin
-/WeatherForecast.Server/WeatherForecast.Server/obj   
-/WeatherForecast.Business/bin
-/WeatherForecast.Business/obj
+bin/
+obj/
+.vs/

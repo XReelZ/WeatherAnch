@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\WeatherForecast.Business\WeatherForecast.Business\WeatherForecast.Business.csproj" />
+    <ProjectReference Include="..\WeatherForecast.Business\WeatherForecast.Business.csproj" />
   </ItemGroup>
 
 </Project>
