@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeatherForecast.Business.Data;
 
 namespace WeatherForecast.Business.Migrations
 {
     [DbContext(typeof(ForecastDbContext))]
-    partial class ForecastDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220918155319_migrationRenameColumns")]
+    partial class migrationRenameColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace WeatherForecast.Business.Migrations
 
             modelBuilder.Entity("WeatherForecast.Business.Models.City", b =>
                 {
-                    b.Property<int>("CityID")
+                    b.Property<int>("CitID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -32,18 +34,10 @@ namespace WeatherForecast.Business.Migrations
                     b.Property<string>("PostCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CityID")
+                    b.HasKey("CitID")
                         .HasName("PK_City");
 
                     b.ToTable("Cities");
-
-                    b.HasData(
-                        new
-                        {
-                            CityID = 1,
-                            Name = "Sofia",
-                            PostCode = "1000"
-                        });
                 });
 
             modelBuilder.Entity("WeatherForecast.Business.Models.Weather", b =>
@@ -74,17 +68,6 @@ namespace WeatherForecast.Business.Migrations
                     b.HasIndex("CityID");
 
                     b.ToTable("WeatherForecasts");
-
-                    b.HasData(
-                        new
-                        {
-                            WeatherID = 1,
-                            CityID = 1,
-                            Date = new DateTime(2022, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Summary = "Very Hot",
-                            TemperatureC = 30,
-                            TemperatureF = 86
-                        });
                 });
 
             modelBuilder.Entity("WeatherForecast.Business.Models.Weather", b =>

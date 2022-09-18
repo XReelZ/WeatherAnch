@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeatherForecast.Business.Data;
 
 namespace WeatherForecast.Business.Migrations
 {
     [DbContext(typeof(ForecastDbContext))]
-    partial class ForecastDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220918160108_initialseed")]
+    partial class initialseed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
