@@ -9,6 +9,6 @@ namespace WeatherForecast.Business
 {
     public interface IDataManager
     {
-        public IQueryable<Weather> GetForecast();
+        public IEnumerable<WeatherDto> GetForecast(int cityID);
     }
 }

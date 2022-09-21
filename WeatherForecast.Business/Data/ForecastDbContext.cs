@@ -14,29 +14,29 @@ namespace WeatherForecast.Business.Data
         {
         }
 
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Weather> WeatherForecasts { get; set; }
+        public DbSet<CityDto> Cities { get; set; }
+        public DbSet<WeatherDto> WeatherForecasts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<City>(e =>
+            modelBuilder.Entity<CityDto>(e =>
             {
                 e.HasKey(k => k.CityID)
                 .HasName("PK_City");
             });
 
-            modelBuilder.Entity<Weather>(w =>
+            modelBuilder.Entity<WeatherDto>(w =>
             {
                 w.HasKey(k => k.WeatherID)
                 .HasName("PK_Weather");
             });
 
-            modelBuilder.Entity<City>()
+            modelBuilder.Entity<CityDto>()
                 .HasMany(c => c.Forecast)
                 .WithOne(w => w.City);
 
-            modelBuilder.Entity<Weather>().HasData(
-            new Weather
+            modelBuilder.Entity<WeatherDto>().HasData(
+            new WeatherDto
             {
                 WeatherID = 1,
                 CityID = 1,
@@ -46,7 +46,7 @@ namespace WeatherForecast.Business.Data
                 TemperatureF = (30 * 9) / 5 + 32
             });
 
-            modelBuilder.Entity<City>().HasData(
+            modelBuilder.Entity<CityDto>().HasData(
                 // anonymous type
                 new
                 {
@@ -55,7 +55,6 @@ namespace WeatherForecast.Business.Data
                     Name = "Sofia",
                     PostCode = "1000"
                 });
-
         }
     }
 }

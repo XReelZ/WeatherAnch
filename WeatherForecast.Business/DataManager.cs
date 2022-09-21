@@ -18,9 +18,11 @@ namespace WeatherForecast.Business
             this.context = context;
         }
 
-        public IQueryable<Weather> GetForecast()
+        public IEnumerable<WeatherDto> GetForecast(int cityID)
         {
             var res = this.context.WeatherForecasts
+                .Where(w => w.CityID == cityID)
+                .Include(w => w.City)
                 .Select(w => w);
             return res;
         }

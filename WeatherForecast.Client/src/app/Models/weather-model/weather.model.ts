@@ -1,29 +1,38 @@
+import { ICity } from "../city-model/city-model";
+
 export interface IWeather {
-  WeatherID: number;
-  Date: Date;
-  TemperatureC: number;
-  TemperatureF: number;
-  Summary: string;
+  weatherID: number;
+  date: Date;
+  temperatureC: number;
+  temperatureF: number;
+  summary: string;
+  cityId: string;
+  city: ICity;
 }
 
 export class Weather implements IWeather {
-  WeatherID: number;
-  Date: Date;
-  TemperatureC: number;
-  TemperatureF: number;
-  Summary: string;
+  weatherID: number;
+  date: Date;
+  temperatureC: number;
+  temperatureF: number;
+  summary: string;
+  cityId: string;
+  city: ICity;
 
   constructor(
-    WeatherID: number,
-    Date: Date,
-    TemperatureC: number,
-    TemperatureF: number,
-    Summary: string
-  ) {
-    this.WeatherID = WeatherID;
-    this.Date = Date;
-    this.TemperatureC = TemperatureC;
-    this.TemperatureF = TemperatureF;
-    this.Summary = Summary;
+    weatherID: number,
+    date: Date,
+    temperatureC: number,
+    temperatureF: number,
+    summary: string,
+    cityId: string,
+    city: ICity) {
+    this.weatherID = weatherID;
+    this.date = date;
+    this.temperatureC = temperatureC;
+    this.temperatureF = temperatureF;
+    this.summary = summary;
+    this.cityId = cityId;
+    this.city = city;
   }
 }

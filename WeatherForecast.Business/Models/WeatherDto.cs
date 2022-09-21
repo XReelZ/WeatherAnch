@@ -4,9 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WeatherForecast.Business.Models
 {
-    public class Weather
+    public class WeatherDto
     {
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int WeatherID { get; set; }
@@ -20,6 +19,6 @@ namespace WeatherForecast.Business.Models
 
         public int CityID { get; set; }
 
-        public City City { get; set; }
+        public CityDto City { get; set; }
     }
 }

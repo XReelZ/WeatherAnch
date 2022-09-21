@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Weather } from '../Models/weather-model/weather.model';
+import { IWeather } from '../Models/weather-model/weather.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService {
-
-    private getWeatherEndpoint = '../api/GetWeatherForecast';
-
-
+  private getWeatherEndpoint = '../api/GetWeatherForecast';
 
   private httpOptions = {
     headers: new Headers({
@@ -20,7 +17,9 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {}
 
-  public getCurrentWeather(): Observable<Weather[]>{
-    return this.http.get<Weather[]>(this.getWeatherEndpoint);
-  };
+  public getCurrentWeather(cityId: number): Observable<IWeather[]> {
+    return this.http.get<IWeather[]>(
+      `${this.getWeatherEndpoint}?cityId=${cityId}`
+    );
+  }
 }

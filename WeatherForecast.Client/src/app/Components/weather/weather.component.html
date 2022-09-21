@@ -1,1 +1,7 @@
 <p>weather works!</p>
+<ul>
+<li *ngFor="let weather of weatherList">
+    {{ weather.city }}
+    {{ weather.temperatureC }}
+</li>
+</ul>

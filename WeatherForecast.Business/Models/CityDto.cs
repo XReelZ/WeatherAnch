@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace WeatherForecast.Business.Models
 {
-    public class City
+    public class CityDto
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CityID { get; set; }
         public string Name { get; set; }
         public string PostCode { get; set; }
-        public ICollection<Weather> Forecast { get; set; }
+        public ICollection<WeatherDto> Forecast { get; set; }
     }
 }
