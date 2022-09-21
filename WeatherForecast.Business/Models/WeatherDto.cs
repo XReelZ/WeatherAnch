@@ -9,13 +9,14 @@ namespace WeatherForecast.Business.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int WeatherID { get; set; }
+
         public DateTime Date { get; set; }
 
-        public int TemperatureC { get; set; }
+        public int TemperatureMin { get; set; }
 
-        public int TemperatureF { get; set; }
+        public int TemperatureMax { get; set; }
 
-        public string Summary { get; set; }
+        public float RainChancePerc { get; set; }
 
         public int CityID { get; set; }
 

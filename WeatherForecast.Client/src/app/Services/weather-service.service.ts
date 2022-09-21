@@ -11,7 +11,7 @@ export class WeatherService {
 
   private httpOptions = {
     headers: new Headers({
-      'Content-Type': 'application/json',
+      contentType: 'application/json',
     }),
   };
 

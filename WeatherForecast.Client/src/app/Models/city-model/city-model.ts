@@ -1,27 +1,27 @@
 import { Weather } from "../weather-model/weather.model";
 
 export interface ICity {
-    CityID: number;
-    Name: Date;
-    PostCode: number;
-    Forecast: Weather[];
+    cityID: number;
+    name: Date;
+    postCode: number;
+    forecast: Weather[];
   }
 export class City implements ICity{
-    CityID: number;
-    Name: Date;
-    PostCode: number;
-    Forecast: Weather[];
+    cityID: number;
+    name: Date;
+    postCode: number;
+    forecast: Weather[];
 
     constructor(
-        CityID: number,
-        Name: Date,
-        PostCode: number,
-        Forecast: Weather[]
+        cityID: number,
+        name: Date,
+        postCode: number,
+        forecast: Weather[]
       ) {
-        this.CityID = CityID;
-        this.Name = Name;
-        this.PostCode = PostCode;
-        this.Forecast = Forecast;
+        this.cityID = cityID;
+        this.name = name;
+        this.postCode = postCode;
+        this.forecast = forecast;
       }
 }
 

@@ -19,6 +19,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "@angular-eslint/component-class-suffix": "error",
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -27,6 +28,12 @@
             "style": "camelCase"
           }
         ],
+        "@typescript-eslint/naming-convention": "warn",
+        "@typescript-eslint/explicit-module-boundary-types": "warn",
+        "@typescript-eslint/ban-ts-comment": "error",
+        "@typescript-eslint/prefer-as-const": "error",
+        "@typescript-eslint/no-namespace": "error",
+        "no-mixed-spaces-and-tabs": "error",
         "@angular-eslint/component-selector": [
           "error",
           {

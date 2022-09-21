@@ -41,9 +41,27 @@ namespace WeatherForecast.Business.Data
                 WeatherID = 1,
                 CityID = 1,
                 Date = new DateTime(2022, 08, 10),
-                Summary = "Very Hot",
-                TemperatureC = 30,
-                TemperatureF = (30 * 9) / 5 + 32
+                RainChancePerc = 0.38F,
+                TemperatureMin = 22,
+                TemperatureMax = 32
+            },
+            new WeatherDto
+            {
+                WeatherID = 2,
+                CityID = 1,
+                Date = new DateTime(2022, 09, 10),
+                RainChancePerc = 0.49F,
+                TemperatureMin = 12,
+                TemperatureMax = 23
+            },
+            new WeatherDto
+            {
+                WeatherID = 3,
+                CityID = 1,
+                Date = new DateTime(2022, 09, 15),
+                RainChancePerc = 0.83F,
+                TemperatureMin = 6,
+                TemperatureMax = 17
             });
 
             modelBuilder.Entity<CityDto>().HasData(

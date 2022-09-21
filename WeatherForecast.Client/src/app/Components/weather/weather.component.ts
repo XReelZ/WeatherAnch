@@ -5,19 +5,17 @@ import { WeatherService } from 'src/app/Services/weather-service.service';
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.scss']
+  styleUrls: ['./weather.component.scss'],
 })
-export class WeatherComponent implements OnInit{
+export class WeatherComponent implements OnInit {
   public weatherList: IWeather[];
-  constructor(private weatherService: WeatherService) { 
+  constructor(private weatherService: WeatherService) {
     this.weatherList = [];
   }
 
   ngOnInit(): void {
-    this.weatherService.getCurrentWeather(1).subscribe(
-      responce => {
-        this.weatherList = responce;
-      }
-    );
+    this.weatherService.getCurrentWeather(1).subscribe((responce) => {
+      this.weatherList = responce;
+    });
   }
 }
